@@ -84,7 +84,7 @@ MongoClient.connect(URI, {useNewUrlParser: true}, function(err, client) {
             "date_creation": Date.now(),
             "creator": req.body.creator,            
             "admin": req.body.creator,
-            "moderators": {},
+            "moderators": [],
             "members": [req.body.creator],
             "messages": []
         }
