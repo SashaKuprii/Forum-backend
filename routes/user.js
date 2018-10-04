@@ -55,7 +55,7 @@ MongoClient.connect(URI, {useNewUrlParser: true}, function(err, client) {
      *     @var password - body
     */
 
-    ROUTER.post('/login', (req, res) => {
+    ROUTER.post('/signin', (req, res) => {
 
         let user = {
             "name": req.body.name,
@@ -68,7 +68,7 @@ MongoClient.connect(URI, {useNewUrlParser: true}, function(err, client) {
                     res.sendStatus(200)
                 }
                 else {
-                    return res.sendStatus(500)
+                    return res.sendStatus(418)
                 }
             })
 
@@ -79,7 +79,8 @@ MongoClient.connect(URI, {useNewUrlParser: true}, function(err, client) {
      * @param
      *     @var name - body
      *     @var password - body
-     *     @var email - body     
+     *     @var email - body 
+     *     @var phone - body    
      */
 
     ROUTER.post('/register', (req, res) => {
